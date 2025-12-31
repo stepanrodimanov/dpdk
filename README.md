@@ -83,13 +83,12 @@ Latency = 605 cycles
 
 ## Зависимости
 В контейнере устанавливаются:
-build-essential - GCC, make, стандартные библиотеки C
-meson - система сборки DPDK
-ninja-build - ускоритель сборки для meson
-pkg-config - поиск библиотек (libnuma)
-libnuma-dev - поддержка NUMA для DPDK
-python3 - для meson и скриптов DPDK
-python3-pyelftools - анализ ELF файлов при сборке DPDK
-wget - скачать архив DPDK
+* build-essential - GCC, make, стандартные библиотеки C
+* meson - система сборки DPDK
+* ninja-build - ускоритель сборки для meson
+* pkg-config - поиск библиотек (libnuma)
+* libnuma-dev - поддержка NUMA для DPDK
+* python3 - для meson и скриптов DPDK
+* python3-pyelftools - анализ ELF файлов при сборке DPDK
+* wget - скачать архив DPDK
 
-# dpdk
