@@ -1,4 +1,4 @@
-# DPDK Latency Test Project
+# DPDK Test Project
 
 ## Описание
 Проект для тестирования задержки обработки сетевых пакетов с использованием DPDK (Data Plane Development Kit). Запускает пример rxtx_callbacks с TAP-интерфейсами.
@@ -18,7 +18,7 @@
 
 ### 1. Клонируйте репозиторий
 ```bash
-git clone <ваш-репозиторий>
+git clone https://github.com/stepanrodimanov/dpdk.git
 cd dpdk
 ```
 
@@ -29,7 +29,7 @@ docker build -t dpdk-test .
 
 ### 3. Запустите контейнер
 ```bash
-docker run --privileged --rm dpdk-test
+docker run --privileged --rm -v $(pwd)/logs:/logs dpdk-test
 ```
 
 ## Как работает
@@ -43,11 +43,42 @@ docker run --privileged --rm dpdk-test
 Лог-файлы создаются в формате: `dpdk_latency_YYYYMMDD_HHMMSS.log`
 
 ```bash
-Лог 1
+EAL: Detected CPU lcores: 12
+EAL: Detected NUMA nodes: 1
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+Port 0 MAC: b2 45 37 1f d8 62
+Port 1 MAC: 1e f2 4d ac 19 1c
+
+Core 0 forwarding packets. [Ctrl+C to quit]
+Latency = 687 cycles
+Latency = 231 cycles
+Latency = 663 cycles
+Latency = 1133 cycles
+Latency = 201 cycles
+Latency = 1038 cycles
+Latency = 1326 cycles
 ```
 
 ```bash
-Лог 2
+EAL: Detected CPU lcores: 12
+EAL: Detected NUMA nodes: 1
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+Port 0 MAC: b2 c4 d0 30 33 6d
+Port 1 MAC: fe e7 b8 ba 71 38
+
+Core 0 forwarding packets. [Ctrl+C to quit]
+Latency = 733 cycles
+Latency = 986 cycles
+Latency = 1929 cycles
+Latency = 932 cycles
+Latency = 341 cycles
+Latency = 1572 cycles
+Latency = 950 cycles
+Latency = 605 cycles
 ```
 
 ## Зависимости
